@@ -42,19 +42,18 @@ class AuthController extends Controller
             'name' =>  'required|string|max:255',
             'username' => 'required|string|max:50|unique:users,username',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string',
+            'password' => 'required|string|min:8|confirmed',
+            'role' => 'required|string',
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $validateData['name'],
             'username' => $validateData['username'],
             'email' => $validateData['email'],
             'password' => Hash::make($validateData['password']),
-            'role'     => $validateData['email'],
+            'role'     => $validateData['role'],
         ]);
-
-        Auth::login($user);
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/login');
     }
 
     public function logout(Request $request)

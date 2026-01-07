@@ -2,238 +2,7 @@
 @section('title', 'Data Lapangan Olahraga')
 @section('title-content', 'Management Data Lapangan Olahraga')
 @section('content')
-{{-- <style>
-    /* Tambah custom styling untuk tema ungu */
-    .card {
-        border: none;
-        box-shadow: 0 4px 6px rgba(102, 126, 234, 0.1);
-        border-radius: 12px;
-    }
-
-    .btn-add {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        color: white;
-        font-weight: 400;
-        padding: 10px 20px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    }
-
-    .btn-add:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        color: white;
-    }
-
-    .btn-pdf {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        border: none;
-        color: white;
-        font-weight: 400;
-        padding: 10px 20px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
-    }
-
-    .btn-pdf:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
-        color: white;
-    }
-
-    /* Table styling */
-    .table thead {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-    }
-
-    .table thead th {
-        border: none;
-        font-weight: 600;
-        padding: 15px;
-        text-transform: uppercase;
-        font-size: 12px;
-        letter-spacing: 0.5px;
-    }
-
-    .table tbody td {
-        padding: 15px;
-        border-bottom: 1px solid #e9ecef;
-        vertical-align: middle;
-    }
-
-    .table tbody tr {
-        transition: all 0.3s ease;
-    }
-
-    .table tbody tr:hover {
-        background-color: rgba(102, 126, 234, 0.05);
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
-    }
-
-    /* Button styling in table */
-    .btn-sm {
-        padding: 6px 12px;
-        font-size: 12px;
-        font-weight: 600;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-        border: none;
-    }
-
-    .btn-edit {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-    }
-
-    .btn-edit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        color: white;
-    }
-
-    .btn-delete-lapangan {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
-    }
-
-    .btn-delete-lapangan:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);
-        color: white;
-    }
-
-    /* Modal styling */
-    .modal-content {
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
-    }
-
-    .modal-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 12px 12px 0 0;
-        padding: 20px;
-    }
-
-    .modal-header .modal-title {
-        font-weight: 600;
-        font-size: 18px;
-    }
-
-    .modal-header .btn-close {
-        filter: brightness(0) invert(1);
-    }
-
-    /* Image preview di modal */
-    .image-preview {
-        padding: 12px;
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        border: 2px dashed #667eea;
-        text-align: center;
-    }
-
-    .image-preview img {
-        max-width: 100%;
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,.15);
-        transition: transform .3s ease;
-    }
-
-    .image-preview img:hover {
-        transform: scale(1.05);
-    }
-
-
-    /* Form inputs in modal */
-    .form-control, .form-select {
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 10px 15px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .form-control:focus, .form-select:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-        outline: none;
-    }
-
-    .form-control::placeholder {
-        color: #999;
-    }
-
-    .form-label {
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 8px;
-        font-size: 14px;
-    }
-
-    /* Modal footer buttons */
-    .modal-footer {
-        border-top: 1px solid #e9ecef;
-        padding: 15px 20px;
-    }
-
-    .btn-save-lapangan {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        color: white;
-        font-weight: 600;
-        padding: 10px 25px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-save-lapangan:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        color: white;
-    }
-
-    .btn-cancel {
-        background-color: #e9ecef;
-        border: none;
-        color: #333;
-        font-weight: 600;
-        padding: 10px 25px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-cancel:hover {
-        background-color: #dee2e6;
-        color: #333;
-    }
-
-    /* Image preview */
-    .image-preview {
-        padding: 10px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        border: 2px dashed #667eea;
-    }
-
-    .image-preview img {
-        border-radius: 6px;
-        margin-top: 8px;
-    }
-</style> --}}
-
 <div class="card p-4">
-    <!-- Update button styling dengan gradient ungu -->
     <div class="d-flex align-items-center mb-3 gap-2">
         <button class="btn btn-add" id="btnAdd">
             <i class="ri-add-line"></i> Tambah Lapangan
@@ -243,7 +12,6 @@
         </button>
     </div>
 
-    <!-- Update table styling dengan tema ungu -->
     <div class="table-responsive">
         <table class="table table-hover" id="lapangansTable">
             <thead>
@@ -363,6 +131,10 @@
 
 <script>
     $(document).ready(function() {
+        function formatTime(time) {
+            if (!time) return '';
+            return time.substring(0,5);
+        }
         let table = $('#lapangansTable').DataTable({
             ajax: {
                 url: '{{ route('api.lapangans.data') }}',
@@ -496,8 +268,8 @@
                     $('#lokasi').val(lapangan.lokasi);
                     $('#kondisi').val(lapangan.kondisi);
                     $('#harga_per_jam').val(lapangan.harga_per_jam);
-                    $('#jam_buka').val(lapangan.jam_buka);
-                    $('#jam_tutup').val(lapangan.jam_tutup);
+                    $('#jam_buka').val(formatTime(lapangan.jam_buka));
+                    $('#jam_tutup').val(formatTime(lapangan.jam_tutup));
                     $('#kontak').val(lapangan.kontak);
                     $('#deskripsi').val(lapangan.deskripsi);
                     

@@ -9,17 +9,9 @@
   <ul class="navbar-nav ms-auto px-3">
     @auth
       <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <span>
           {{ Auth::user()->name }}
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <form action="/logout" method="POST">
-              @csrf
-              <button type="submit" class="dropdown-item">Logout</button>
-            </form>
-          </li>
-        </ul>
+        </span>
       </li>
     @else
       <li class="nav-item">

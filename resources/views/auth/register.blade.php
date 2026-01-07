@@ -146,7 +146,7 @@
                             <input
                                 type="password"
                                 name="password_confirmation"
-                                class="form-control @error('password_confirmation') is-invalid @enderror"
+                                class="form-control @error('password') is-invalid @enderror"
                                 placeholder="Ulangi password"
                                 required
                             >
